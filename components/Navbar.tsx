@@ -7,15 +7,15 @@ import { useRouter } from "next/router";
 const NAV_DATA = [
   {
     name: "HOME",
-    url: "#home",
+    url: "/#home",
   },
   {
     name: "ABOUT",
-    url: "#about",
+    url: "/#about",
   },
   {
     name: "COMPANY",
-    url: "#company",
+    url: "/#company",
   },
 ];
 
@@ -28,7 +28,7 @@ export const Navbar = () => {
       alignItems="center"
       bg="#070b36"
       px={PX}
-      py={["6px", null, "8px"]}
+      py={["6px", "8px", "10px"]}
     >
       <ChakraLink as={Link} href="/">
         <Image w={["100px", "200px"]} src="/web_logo.svg" alt="web logo" />
@@ -47,7 +47,7 @@ export const Navbar = () => {
               _hover={{
                 textDecor: "none",
               }}
-              color={router.asPath === `/${data.url}` ? "#56b2ef" : "white"}
+              color={router.asPath === data.url ? "#56b2ef" : "white"}
               href={data.url}
             >
               {data.name}

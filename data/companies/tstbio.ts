@@ -1,5 +1,5 @@
-const TSTBIO = {
-  logo: "/example/tstbio",
+export const TSTBIO = {
+  logo: "/example/tstbio.png",
   english: "tst biomedical eletronics co. ltd",
   chinese: "嘉碩生醫電子股份有限公司",
   website: "https://www.tst.bio/home.jsp?lang=tw",
@@ -16,7 +16,7 @@ const TSTBIO = {
     },
     {
       id: "3",
-      image: "/example/product3.png",
+      image: "/example/product3.jpeg",
       name: "Very Cool Battery",
     },
     {

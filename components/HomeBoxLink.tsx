@@ -13,7 +13,6 @@ export const HomeBoxLink = ({
     <Link
       px="10px"
       py="5px"
-      bg="red"
       maxW="360px"
       bgGradient="linear(to-r, #1ebea5, #107bef)"
       borderRadius="10px"
