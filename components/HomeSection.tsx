@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Text, Flex } from "@chakra-ui/react";
+import { Box, Text, Flex } from "@chakra-ui/react";
 import { HomeBoxLink } from "@/components/HomeBoxLink";
 import { PX, MAX_W } from "@/styles/constans";
 
@@ -47,7 +47,7 @@ export const HomeSection = () => {
       bgSize="cover"
       bgPos="center top"
       minH={["640px", "100vh"]}
-      id="#home"
+      id="home"
     >
       <Box px={PX} maxW={MAX_W} mx="auto">
         <Flex

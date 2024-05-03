@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { Box, Image, Text, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { HomeSection } from "@/components/HomeSection";
+import { AboutSection } from "@/components/AboutSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <Box>
         <HomeSection />
+        <AboutSection />
       </Box>
     </>
   );

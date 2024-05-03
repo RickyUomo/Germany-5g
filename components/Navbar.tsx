@@ -5,15 +5,15 @@ import { PX } from "@/styles/constans";
 const NAV_DATA = [
   {
     name: "HOME",
-    url: "/#home",
+    url: "#home",
   },
   {
     name: "ABOUT",
-    url: "/#about",
+    url: "#about",
   },
   {
     name: "COMPANY",
-    url: "/#company",
+    url: "#company",
   },
 ];
 
@@ -24,7 +24,7 @@ export const Navbar = () => {
       alignItems="center"
       bg="#070b36"
       px={PX}
-      py={["3px", "6px"]}
+      py={["3px", "6px", "8px"]}
     >
       <Image w={["100px", "200px"]} src="/web_logo.svg" alt="web logo" />
 
