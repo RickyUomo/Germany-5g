@@ -5,27 +5,27 @@ export const TSTBIO = {
   website: "https://www.tst.bio/home.jsp?lang=tw",
   products: [
     {
-      id: "1",
+      id: "tstbio-1",
       image: "/example/product1.png",
       name: "gaw6",
     },
     {
-      id: "2",
+      id: "tstbio-2",
       image: "/example/product2.png",
       name: "iProtin",
     },
     {
-      id: "3",
+      id: "tstbio-3",
       image: "/example/product3.jpeg",
       name: "Very Cool Battery",
     },
     {
-      id: "4",
+      id: "tstbio-4",
       image: "/example/product4.png",
       name: "iProtin Pro",
     },
     {
-      id: "5",
+      id: "tstbio-5",
       image: "/example/product5.png",
       name: "I have no idea",
     },

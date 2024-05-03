@@ -13,7 +13,7 @@ import Link from "next/link";
 import { LinkIcon } from "@chakra-ui/icons";
 import ALL_COMPANIES from "@/data/companies";
 
-export default function CompanyDetail() {
+export default function CompanyDetailPage() {
   const router = useRouter();
   const { slug } = router.query;
   const company = ALL_COMPANIES.find((c) => c.slug === slug);
@@ -68,6 +68,7 @@ export default function CompanyDetail() {
         gap="20px"
         alignItems="center"
         mt="30px"
+        mb="80px"
       >
         {data.products.map((p, index) => (
           <ChakraLink
@@ -75,7 +76,7 @@ export default function CompanyDetail() {
             _hover={{
               textDecor: "none",
             }}
-            href={`/company/${slug}/product/${p.id}`}
+            href={`/${slug}/product/${p.id}`}
             key={index}
           >
             <Flex
@@ -89,7 +90,7 @@ export default function CompanyDetail() {
                 w="400px"
                 h="400px"
                 mb="10px"
-                aspectRatio={4 / 19}
+                aspectRatio={4 / 9}
                 draggable={false}
                 src={p.image}
                 alt={p.name}
@@ -101,6 +102,9 @@ export default function CompanyDetail() {
           </ChakraLink>
         ))}
       </Grid>
+      <Text fontWeight={700} fontSize={["20px", null, "24px"]}>
+        Copyright &copy; bizWINNER 2024
+      </Text>
     </Flex>
   );
 }
