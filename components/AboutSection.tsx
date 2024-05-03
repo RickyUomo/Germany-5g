@@ -10,7 +10,7 @@ export const AboutSection = () => {
         justify="center"
         alignItems="center"
         px={PX}
-        py="50px"
+        py="70px"
         maxW={MAX_W}
         mx="auto"
         gap={["30px", "40px"]}
@@ -24,7 +24,7 @@ export const AboutSection = () => {
           ABOUT
         </Text>
         <Image w="200px" src="/web_intro-logo.svg" alt="intro logo" />
-        <Box maxW="565px">
+        <Box maxW="700px">
           <Text
             color="#00e2e7"
             fontSize={["18px", "22px", "26px"]}
@@ -40,7 +40,7 @@ export const AboutSection = () => {
             of physical and digital spaces.
           </Text>
         </Box>
-        <Box maxW="565px">
+        <Box maxW="700px">
           <Text
             color="#00e2e7"
             fontSize={["18px", "20px", "24px"]}

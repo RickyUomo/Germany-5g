@@ -6,7 +6,7 @@ import { PX, MAX_W } from "@/styles/constans";
 const BOX_DATA = [
   {
     name: (
-      <Text color="white">
+      <Text fontSize={["18px", null, "20px"]} color="white">
         <Text as="span" fontWeight={800}>
           MetaVerse
         </Text>{" "}
@@ -17,7 +17,7 @@ const BOX_DATA = [
   },
   {
     name: (
-      <Text color="white">
+      <Text fontSize={["18px", null, "20px"]} color="white">
         <Text as="span" fontWeight={800}>
           MetaVerse
         </Text>{" "}
@@ -28,7 +28,7 @@ const BOX_DATA = [
   },
   {
     name: (
-      <Text color="white">
+      <Text fontSize={["18px", null, "20px"]} color="white">
         <Text as="span" fontWeight={800}>
           MetaVerse
         </Text>{" "}
