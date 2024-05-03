@@ -17,6 +17,10 @@ export const HomeBoxLink = ({
       w="300px"
       bgGradient="linear(to-r, #1ebea5, #107bef)"
       borderRadius="10px"
+      textAlign="center"
+      _hover={{
+        textDecor: "none",
+      }}
       href={url}
     >
       <Flex alignItems="center" justify="center" gap="10px">

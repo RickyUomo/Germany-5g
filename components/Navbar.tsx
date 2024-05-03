@@ -1,10 +1,11 @@
 import React from "react";
 import { Flex, Image, Text, Link } from "@chakra-ui/react";
+import { PX } from "@/styles/constans";
 
 const NAV_DATA = [
   {
     name: "HOME",
-    url: "/",
+    url: "/#home",
   },
   {
     name: "ABOUT",
@@ -22,7 +23,7 @@ export const Navbar = () => {
       justify="space-between"
       alignItems="center"
       bg="#070b36"
-      px={["20px", "40px", "60px", "80px"]}
+      px={PX}
       py={["3px", "6px"]}
     >
       <Image w={["100px", "200px"]} src="/web_logo.svg" alt="web logo" />
