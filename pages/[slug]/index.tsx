@@ -102,9 +102,6 @@ export default function CompanyDetailPage() {
           </ChakraLink>
         ))}
       </Grid>
-      <Text fontWeight={700} fontSize={["20px", null, "24px"]}>
-        Copyright &copy; bizWINNER 2024
-      </Text>
     </Flex>
   );
 }

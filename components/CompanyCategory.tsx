@@ -48,7 +48,7 @@ export const CompanyCategory = ({
         alignItems="center"
       >
         {companies.map((company, index) => (
-          <ChakraLink as={Link} href={`/company/${company.name}`} key={index}>
+          <ChakraLink as={Link} href={company.name} key={index}>
             <Image
               w="100%"
               objectFit="contain"
