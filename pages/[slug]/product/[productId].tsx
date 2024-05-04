@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { Text, Flex, Image, Box, Button } from "@chakra-ui/react";
+import { Text, Flex, Image, Box } from "@chakra-ui/react";
 import { PX, MAX_W } from "@/styles/constans";
 import ALL_PRODUCTS from "@/data/products";
+import ReactPlayer from "react-player";
 
 type ImageProps = {
   name: string | null;
@@ -71,6 +72,16 @@ export default function ProductDetailPage() {
           <Text>{productDetail.description}</Text>
         </Box>
       </Flex>
+
+      <Box className="playerWrapper">
+        <ReactPlayer
+          className="reactPlayer"
+          height="500px"
+          width="800px"
+          controls
+          url="/example/video1.mp4"
+        />
+      </Box>
     </Box>
   );
 }

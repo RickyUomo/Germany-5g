@@ -21,6 +21,6 @@ export const TSTBIO = [
         link: "/example/product1.png",
       },
     ],
-    video: "",
+    video: "/example/video1.mp4",
   },
 ];
