@@ -73,7 +73,7 @@ export default function ProductDetailPage() {
         </Box>
       </Flex>
 
-      <Box w={["300px", "400px", "100%"]} mb="50px" className="playerWrapper">
+      <Box w="100%" className="playerWrapper">
         <ReactPlayer
           className="reactPlayer"
           height="100%"
