@@ -13,23 +13,26 @@ export const Footer = () => {
           mx="auto"
           justify="center"
           alignItems="center"
-          gap={["40px", null, "80px"]}
+          gap={["40px", null, "80px", "120px"]}
         >
           <Image
             objectFit="cover"
             maxW={["80px", null, "200px"]}
+            h={["100%", null, "150px"]}
             src="/footer/footer1.png"
             alt="een logo"
           />
           <Image
             objectFit="cover"
             maxW={["80px", null, "200px"]}
+            h={["100%", null, "150px"]}
             src="/footer/footer2.png"
             alt="taiwan expo logo"
           />
           <Image
             objectFit="cover"
             maxW={["80px", null, "200px"]}
+            h={["100%", null, "150px"]}
             src="/footer/footer3.png"
             alt="xrt logo"
           />

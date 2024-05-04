@@ -8,9 +8,18 @@ export const TSTBIO = [
     Nunc feugiat, nisi nec auctor feugiat, massa ex blandit dui, sed mollis tellus nunc ut arcu. Quisque fermentum fringilla nisi, elementum ultrices nisl convallis quis. Ut a maximus nisi. Aenean laoreet mollis nunc, ut rhoncus nunc luctus vitae. Cras tellus ex, convallis sed ex non, sagittis consectetur turpis. Duis varius elit lorem, in aliquam dui bibendum et. Duis ullamcorper turpis ut sagittis tincidunt.
     Morbi accumsan tellus et posuere posuere. Donec molestie aliquam iaculis. Curabitur dapibus molestie odio, vitae aliquet augue aliquet ut. Curabitur ullamcorper arcu eget gravida sodales. Etiam sit amet mi egestas, vestibulum lorem at, maximus velit. Integer ante est, consectetur quis nisl eu, cursus feugiat est. Donec varius egestas lacus ut tempor. Morbi lacinia nisi id dui elementum, quis efficitur est tristique. Nam sed dapibus lectus, pharetra commodo mauris. Donec at eros at lacus euismod accumsan. Suspendisse imperdiet porta nisi quis pretium. Praesent congue metus sit amet fermentum aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris in lorem quis mauris consectetur tincidunt. Sed tellus tellus, fermentum eget tortor quis, accumsan sagittis arcu. Curabitur lobortis sem et vestibulum viverra.`,
     images: [
-      "/example/product4.png",
-      "/example/product4.png",
-      "/example/product4.png",
+      {
+        name: "product 1",
+        link: "/example/product4.png",
+      },
+      {
+        name: "product 2",
+        link: "/example/product2.png",
+      },
+      {
+        name: "product 3",
+        link: "/example/product1.png",
+      },
     ],
     video: "",
   },

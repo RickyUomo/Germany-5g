@@ -29,6 +29,7 @@ export const Navbar = () => {
       bg="#070b36"
       px={PX}
       py={["6px", "8px", "10px"]}
+      mx="auto"
     >
       <ChakraLink as={Link} href="/">
         <Image w={["100px", "200px"]} src="/web_logo.svg" alt="web logo" />
