@@ -36,7 +36,7 @@ export default function ProductDetailPage() {
 
   return (
     <Box px={PX} py="60px" maxW={MAX_W} mx="auto">
-      <Flex flexDir={["column", null, "row"]} gap="50px">
+      <Flex flexDir={["column", null, "row"]} gap="50px" mb="50px">
         <Flex flexDir="column" w={["100%", null, "50%"]}>
           <Image
             objectFit="cover"
@@ -73,11 +73,11 @@ export default function ProductDetailPage() {
         </Box>
       </Flex>
 
-      <Box className="playerWrapper">
+      <Box w={["300px", "400px", "100%"]} mb="50px" className="playerWrapper">
         <ReactPlayer
           className="reactPlayer"
-          height="500px"
-          width="800px"
+          height="100%"
+          width="100%"
           controls
           url="/example/video1.mp4"
         />
