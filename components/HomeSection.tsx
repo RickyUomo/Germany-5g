@@ -74,19 +74,19 @@ export const HomeSection = () => {
             <HomeBoxLink {...data} key={index} />
           ))}
           {isIPhone && (
-            <ChakraLink as={Link} w={["100%", null, "150px"]} href="/vitart">
-              <Flex
-                bg="white"
-                px="30px"
-                py="20px"
-                maxW="360px"
-                justify="center"
-                alignItems="center"
-                gap="5px"
-                borderRadius="10px"
-                h="100%"
-                _hover={{ cursor: "pointer" }}
-              >
+            <ChakraLink
+              as={Link}
+              _hover={{ cursor: "pointer" }}
+              w={["100%", null, "150px"]}
+              px="30px"
+              py="20px"
+              maxW="360px"
+              bg="white"
+              borderRadius="10px"
+              h="100%"
+              href="/vitart"
+            >
+              <Flex justify="center" alignItems="center" gap="5px">
                 <Text
                   fontSize={["18px", null, "20px"]}
                   bgGradient="linear(to-r, #1bb9aa, #3197d3)"
