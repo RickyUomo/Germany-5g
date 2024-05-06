@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Text, Flex } from "@chakra-ui/react";
+import { Box, Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
 import Link from "next/link";
 import { HomeBoxLink } from "@/components/HomeBoxLink";
 import { PX, MAX_W } from "@/styles/constans";
@@ -74,7 +74,7 @@ export const HomeSection = () => {
             <HomeBoxLink {...data} key={index} />
           ))}
           {isIPhone && (
-            <Link href="/vitart.html">
+            <ChakraLink as={Link} w={["100%", null, "150px"]} href="/vitart">
               <Flex
                 bg="white"
                 px="30px"
@@ -85,7 +85,6 @@ export const HomeSection = () => {
                 gap="5px"
                 borderRadius="10px"
                 h="100%"
-                w={["100%", null, "150px"]}
                 _hover={{ cursor: "pointer" }}
               >
                 <Text
@@ -98,7 +97,7 @@ export const HomeSection = () => {
                 </Text>
                 <ArrowForwardIcon color="#3298d2" boxSize={5} />
               </Flex>
-            </Link>
+            </ChakraLink>
           )}
         </Flex>
       </Box>
