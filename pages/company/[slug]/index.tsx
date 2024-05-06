@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import {
   Text,
@@ -13,11 +13,31 @@ import Link from "next/link";
 import { LinkIcon } from "@chakra-ui/icons";
 import ALL_COMPANIES from "@/data/companies";
 
+type Product = {
+  id: string;
+  image: string;
+  name: string;
+};
+
+type Company = {
+  logo: string;
+  english: string;
+  chinese: string;
+  website: string;
+  products: Product[];
+};
+
 export default function CompanyDetailPage() {
+  const [data, setData] = useState<Company | null>();
   const router = useRouter();
   const { slug } = router.query;
-  const company = ALL_COMPANIES.find((c) => c.slug === slug);
-  const data = company ? company.file : null;
+  // const company = ALL_COMPANIES.find((c) => c.slug === slug);
+  // const data = company ? company.file : null;
+
+  useEffect(() => {
+    const company = ALL_COMPANIES.find((c) => c.slug === slug);
+    company ? setData(company.file) : setData(null);
+  }, [slug]);
 
   if (!data) {
     return (
