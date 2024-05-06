@@ -3,37 +3,25 @@ import { useRouter } from "next/router";
 import { CloseIcon } from "@chakra-ui/icons";
 import { Text, Flex, Image, Box, Link } from "@chakra-ui/react";
 import { PX, MAX_W } from "@/styles/constans";
-import ALL_PRODUCTS from "@/data/products";
+import ALL_COMPANIES from "@/data/companies";
 import ReactPlayer from "react-player";
+import { Product } from "..";
 
 type ImageProps = {
   name: string | null;
   link: string | null;
 };
 
-export default function ProductDetailPage() {
+export default function ProductDetailPage({ product }: { product: Product }) {
   const [selectedImage, setSelectedImage] = useState<ImageProps>({
     name: null,
     link: null,
   });
 
   const router = useRouter();
-  const { productId, slug } = router.query;
-  const company = ALL_PRODUCTS.find((p) => p.company === slug);
-  const productList = company ? company.productList : null;
-  const productDetail = productList?.find((p) => p.id === productId) || null;
+  const { slug } = router.query;
 
   const handleClick = (image: ImageProps) => setSelectedImage(image);
-
-  if (!productList || !productDetail) {
-    return (
-      <Flex flexDir="column" justify="center" alignItems="center" minH="100vh">
-        <Text fontWeight={800} fontSize={["20px", "24px", "28px"]}>
-          Product not found
-        </Text>
-      </Flex>
-    );
-  }
 
   return (
     <Box px={PX} py="60px" maxW={MAX_W} mx="auto">
@@ -41,11 +29,11 @@ export default function ProductDetailPage() {
         <Flex flexDir="column" w={["100%", null, "50%"]}>
           <Image
             objectFit="cover"
-            src={selectedImage.link ?? productDetail.images[0].link}
-            alt={selectedImage.name ?? productDetail.images[0].name}
+            src={selectedImage.link ?? product.subImages[0].link}
+            alt={selectedImage.name ?? product.subImages[0].name}
           />
           <Flex gap="10px">
-            {productDetail.images.map((image, index) => (
+            {product.subImages.map((image, index) => (
               <Box
                 _hover={{
                   cursor: "pointer",
@@ -68,9 +56,9 @@ export default function ProductDetailPage() {
         </Flex>
         <Box w={["100%", null, "50%"]}>
           <Text fontWeight={600} fontSize={["24px", null, "32px"]} mb="20px">
-            {productDetail.name}
+            {product.name}
           </Text>
-          <Text>{productDetail.description}</Text>
+          <Text>{product.description}</Text>
         </Box>
       </Flex>
 
@@ -110,4 +98,33 @@ export default function ProductDetailPage() {
       </Flex>
     </Box>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = ALL_COMPANIES.flatMap((company) =>
+    company.file.products.map((p) => ({
+      params: {
+        slug: company.slug,
+        productId: p.productId,
+      },
+    }))
+  );
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }: { params: any }) {
+  const { slug, productId } = params!;
+  const company = ALL_COMPANIES.find((company) => company.slug === slug);
+  const product = company?.file.products.find(
+    (product) => product.productId === productId
+  );
+
+  if (!company || !product) {
+    throw new Error("Product not found");
+  }
+
+  return {
+    props: { product },
+  };
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import {
   Text,
@@ -12,16 +12,22 @@ import { PX, MAX_W } from "@/styles/constans";
 import Link from "next/link";
 import { LinkIcon } from "@chakra-ui/icons";
 import ALL_COMPANIES from "@/data/companies";
-import { promises as fs } from "fs";
-import path from "path";
 
-type Product = {
-  id: string;
-  image: string;
+type subImage = {
   name: string;
+  link: string;
 };
 
-type Company = {
+export type Product = {
+  productId: string;
+  image: string;
+  name: string;
+  description: string;
+  subImages: subImage[];
+  video: string;
+};
+
+export type Company = {
   logo: string;
   english: string;
   chinese: string;
@@ -30,26 +36,8 @@ type Company = {
 };
 
 export default function CompanyDetailPage({ company }: { company: Company }) {
-  // const [data, setData] = useState<Company | null>();
   const router = useRouter();
   const { slug } = router.query;
-  // const company = ALL_COMPANIES.find((c) => c.slug === slug);
-  // const data = company ? company.file : null;
-
-  // useEffect(() => {
-  //   const company = ALL_COMPANIES.find((c) => c.slug === slug);
-  //   company ? setData(company.file) : setData(null);
-  // }, [slug]);
-
-  // if (!data) {
-  //   return (
-  //     <Flex flexDir="column" justify="center" alignItems="center" minH="100vh">
-  //       <Text fontWeight={800} fontSize={["20px", "24px", "28px"]}>
-  //         Company not found
-  //       </Text>
-  //     </Flex>
-  //   );
-  // }
 
   return (
     <Flex
@@ -98,7 +86,7 @@ export default function CompanyDetailPage({ company }: { company: Company }) {
             _hover={{
               textDecor: "none",
             }}
-            href={`/company/${slug}/product/${p.id}`}
+            href={`/company/${slug}/product/${p.productId}`}
             key={index}
           >
             <Flex
@@ -178,7 +166,7 @@ export async function getStaticProps({ params }: { params: any }) {
   const company = ALL_COMPANIES.find((company) => company.slug === slug);
 
   if (!company) {
-    throw new Error("Post not found");
+    throw new Error("Company not found");
   }
 
   return {
