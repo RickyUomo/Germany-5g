@@ -12,6 +12,8 @@ import { PX, MAX_W } from "@/styles/constans";
 import Link from "next/link";
 import { LinkIcon } from "@chakra-ui/icons";
 import ALL_COMPANIES from "@/data/companies";
+import { promises as fs } from "fs";
+import path from "path";
 
 type Product = {
   id: string;
@@ -27,27 +29,27 @@ type Company = {
   products: Product[];
 };
 
-export default function CompanyDetailPage() {
-  const [data, setData] = useState<Company | null>();
+export default function CompanyDetailPage({ company }: { company: Company }) {
+  // const [data, setData] = useState<Company | null>();
   const router = useRouter();
   const { slug } = router.query;
   // const company = ALL_COMPANIES.find((c) => c.slug === slug);
   // const data = company ? company.file : null;
 
-  useEffect(() => {
-    const company = ALL_COMPANIES.find((c) => c.slug === slug);
-    company ? setData(company.file) : setData(null);
-  }, [slug]);
+  // useEffect(() => {
+  //   const company = ALL_COMPANIES.find((c) => c.slug === slug);
+  //   company ? setData(company.file) : setData(null);
+  // }, [slug]);
 
-  if (!data) {
-    return (
-      <Flex flexDir="column" justify="center" alignItems="center" minH="100vh">
-        <Text fontWeight={800} fontSize={["20px", "24px", "28px"]}>
-          Company not found
-        </Text>
-      </Flex>
-    );
-  }
+  // if (!data) {
+  //   return (
+  //     <Flex flexDir="column" justify="center" alignItems="center" minH="100vh">
+  //       <Text fontWeight={800} fontSize={["20px", "24px", "28px"]}>
+  //         Company not found
+  //       </Text>
+  //     </Flex>
+  //   );
+  // }
 
   return (
     <Flex
@@ -71,13 +73,13 @@ export default function CompanyDetailPage() {
       </Text>
       <Image
         w={["200px", "300px", "400px"]}
-        src={data.logo}
-        alt={data.english}
+        src={company.logo}
+        alt={company.english}
         mb="30px"
       />
-      <CompanyName mb="5px" name={data.english} />
-      <CompanyName mb="20px" name={data.chinese} />
-      <WebsiteBox url={data.website} />
+      <CompanyName mb="5px" name={company.english} />
+      <CompanyName mb="20px" name={company.chinese} />
+      <WebsiteBox url={company.website} />
       <Grid
         templateColumns={[
           "repeat(1, 1fr)",
@@ -90,7 +92,7 @@ export default function CompanyDetailPage() {
         mt="30px"
         mb="80px"
       >
-        {data.products.map((p, index) => (
+        {company.products.map((p, index) => (
           <ChakraLink
             as={Link}
             _hover={{
@@ -162,3 +164,24 @@ const WebsiteBox = ({ url }: { url: string }) => {
     </ChakraLink>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = ALL_COMPANIES.map((company) => ({
+    params: { slug: company.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }: { params: any }) {
+  const { slug } = params!;
+  const company = ALL_COMPANIES.find((company) => company.slug === slug);
+
+  if (!company) {
+    throw new Error("Post not found");
+  }
+
+  return {
+    props: { company: company.file },
+  };
+}

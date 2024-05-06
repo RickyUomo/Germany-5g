@@ -84,7 +84,7 @@ export const HomeSection = () => {
               bg="white"
               borderRadius="10px"
               h="100%"
-              href="https://5g.brightideas.com.tw/test/assets/88440a3d-b3f7-48fe-b743-9e101ee4c795.reality"
+              href="/vitart"
               rel="ar"
             >
               <Flex justify="center" alignItems="center" gap="5px">
