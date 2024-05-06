@@ -43,10 +43,12 @@ const BOX_DATA = [
 
 export const HomeSection = () => {
   const [isIPhone, setIsIPhone] = useState(false);
+  const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
-    const userAgent = window.navigator.userAgent;
+    const userAgent = window.navigator.userAgent.toLowerCase();
     setIsIPhone(userAgent.match(/iPhone/i) !== null);
+    setIsSafari(/safari/.test(userAgent) && !/chrome/.test(userAgent));
   }, []);
 
   return (
@@ -73,7 +75,7 @@ export const HomeSection = () => {
           {BOX_DATA.map((data, index) => (
             <HomeBoxLink {...data} key={index} />
           ))}
-          {isIPhone && (
+          {isIPhone && isSafari && (
             <ChakraLink
               as={Link}
               _hover={{ cursor: "pointer" }}
