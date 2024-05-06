@@ -76,7 +76,7 @@ export default function CompanyDetailPage() {
             _hover={{
               textDecor: "none",
             }}
-            href={`/${slug}/product/${p.id}`}
+            href={`/company/${slug}/product/${p.id}`}
             key={index}
           >
             <Flex
