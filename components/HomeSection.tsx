@@ -44,7 +44,7 @@ export const HomeSection = () => {
   return (
     <Box
       pos="relative"
-      bgImage="/web.jpg"
+      bgImage={["web-m.jpg", null, "/web.jpg"]}
       bgSize="cover"
       bgPos="center top"
       minH={["640px", "100vh"]}

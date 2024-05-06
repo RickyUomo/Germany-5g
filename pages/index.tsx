@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>aizwinner</title>
+        <title>BIZWINNER</title>
         <meta name="description" content="5G xR Expo Solution" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* no favicon for now */}
