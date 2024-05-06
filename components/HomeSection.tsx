@@ -74,7 +74,7 @@ export const HomeSection = () => {
             <HomeBoxLink {...data} key={index} />
           ))}
           {isIPhone && (
-            <Link href="/AR/vitart.html">
+            <Link href="/vitart.html">
               <Flex
                 bg="white"
                 px="30px"
