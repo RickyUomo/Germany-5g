@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { Text, Flex, Image, Box } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
+import { Text, Flex, Image, Box, Link } from "@chakra-ui/react";
 import { PX, MAX_W } from "@/styles/constans";
 import ALL_PRODUCTS from "@/data/products";
 import ReactPlayer from "react-player";
@@ -73,7 +74,7 @@ export default function ProductDetailPage() {
         </Box>
       </Flex>
 
-      <Box w="100%" className="playerWrapper">
+      <Box w="100%" className="playerWrapper" mb="100px">
         <ReactPlayer
           className="reactPlayer"
           height="100%"
@@ -82,6 +83,31 @@ export default function ProductDetailPage() {
           url="/example/video1.mp4"
         />
       </Box>
+
+      <Flex justify="center">
+        <Link
+          textAlign="center"
+          _hover={{
+            textDecor: "none",
+          }}
+          color="white"
+          href={`/company/${slug}`}
+        >
+          <Flex
+            px="20px"
+            py="10px"
+            alignItems="center"
+            justify="center"
+            gap="10px"
+            bgGradient="linear(to-r, #1ebea5, #107bef)"
+            borderRadius="5px"
+            maxW="150px"
+          >
+            CLOSE
+            <CloseIcon boxSize={3} />
+          </Flex>
+        </Link>
+      </Flex>
     </Box>
   );
 }
