@@ -6,6 +6,7 @@ import { PX, MAX_W } from "@/styles/constans";
 import ALL_COMPANIES from "@/data/companies";
 import ReactPlayer from "react-player";
 import { Product } from "..";
+import parse from "html-react-parser";
 
 type ImageProps = {
   name: string | null;
@@ -58,7 +59,7 @@ export default function ProductDetailPage({ product }: { product: Product }) {
           <Text fontWeight={600} fontSize={["24px", null, "32px"]} mb="20px">
             {product.name}
           </Text>
-          <Text>{product.description}</Text>
+          <Text>{parse(product.description)}</Text>
         </Box>
       </Flex>
 
