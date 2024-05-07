@@ -41,7 +41,7 @@ Secondly, go to `/components/CompanySection.tsx`, import new ts files and edit t
 
 ## 3. Update companies and products
 
-Go to `/data/companies`, add new company ts file and import it to `index.tsx` following the same fortmat/structure.
+Go to `/data/companies`, add new company ts file and import it to `index.ts` following the same fortmat/structure.
 
 > [!IMPORTANT]  
 > `slug` field in `/data/companies/index.tsx` needs to match company name in `/data/categories/categories.ts` files.
