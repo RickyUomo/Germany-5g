@@ -12,6 +12,16 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 All static files are stored in public folder.
 
+Second, get the static html files folder
+
+run
+
+```bash
+yarn build
+```
+
+there will be an `out` folder, inside the folder are static files, you can use this folder to deploy on the server.
+
 # How to update data
 
 ## 1. Update 3 buttons in Hero section
