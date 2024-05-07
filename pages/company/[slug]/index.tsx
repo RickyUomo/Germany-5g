@@ -78,7 +78,7 @@ export default function CompanyDetailPage({ company }: { company: Company }) {
         gap="20px"
         alignItems="center"
         mt="30px"
-        mb="80px"
+        mb={["40px", "60px", "80px"]}
       >
         {company.products.map((p, index) => (
           <ChakraLink
@@ -96,9 +96,9 @@ export default function CompanyDetailPage({ company }: { company: Company }) {
               maxH="500px"
             >
               <Image
-                objectFit="cover"
-                w="400px"
-                h="400px"
+                objectFit="contain"
+                w={["200px", "300px", "400px"]}
+                h={["200px", "300px", "400px"]}
                 mb="10px"
                 aspectRatio={4 / 9}
                 draggable={false}
