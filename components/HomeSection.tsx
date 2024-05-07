@@ -4,6 +4,7 @@ import Link from "next/link";
 import { HomeBoxLink } from "@/components/HomeBoxLink";
 import { PX, MAX_W } from "@/styles/constans";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { isSafari } from "react-device-detect";
 
 const BOX_DATA = [
   {
@@ -43,12 +44,10 @@ const BOX_DATA = [
 
 export const HomeSection = () => {
   const [isIPhone, setIsIPhone] = useState(false);
-  const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
-    const userAgent = window.navigator.userAgent.toLowerCase();
+    const userAgent = window.navigator.userAgent;
     setIsIPhone(userAgent.match(/iPhone/i) !== null);
-    setIsSafari(/safari/.test(userAgent) && !/chrome/.test(userAgent));
   }, []);
 
   return (
