@@ -27,7 +27,7 @@ export const TSTBIO = {
           link: "/example/product1.png",
         },
       ],
-      video: "/example/video1.mp4",
+      video: "",
     },
     {
       productId: "tstbio-2",

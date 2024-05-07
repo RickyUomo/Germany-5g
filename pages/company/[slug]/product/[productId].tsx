@@ -62,15 +62,17 @@ export default function ProductDetailPage({ product }: { product: Product }) {
         </Box>
       </Flex>
 
-      <Box w="100%" className="playerWrapper" mb="100px">
-        <ReactPlayer
-          className="reactPlayer"
-          height="100%"
-          width="100%"
-          controls
-          url="/example/video1.mp4"
-        />
-      </Box>
+      {product.video && (
+        <Box w="100%" className="playerWrapper" mb="100px">
+          <ReactPlayer
+            className="reactPlayer"
+            height="100%"
+            width="100%"
+            controls
+            url={product.video}
+          />
+        </Box>
+      )}
 
       <Flex justify="center">
         <Link
