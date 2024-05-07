@@ -59,9 +59,6 @@ export const HomeSection = () => {
       minH={["640px", "100vh"]}
       id="home"
     >
-      <Text color="red" fontWeight={800} fontSize={30}>
-        {isSafari ? "using safari!!!" : "not using safari!!"}
-      </Text>
       <Box px={PX} maxW={MAX_W} mx="auto">
         <Flex
           pos="absolute"
