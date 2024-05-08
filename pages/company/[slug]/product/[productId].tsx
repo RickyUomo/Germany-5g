@@ -45,7 +45,7 @@ export default function ProductDetailPage({ product }: { product: Product }) {
                 <Image
                   border="#666666 1px solid"
                   px="10px"
-                  objectFit="cover"
+                  objectFit="contain"
                   w={["70px", null, "100px"]}
                   h={["70px", null, "100px"]}
                   src={image.link}
