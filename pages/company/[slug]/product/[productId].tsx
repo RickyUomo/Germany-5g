@@ -29,7 +29,9 @@ export default function ProductDetailPage({ product }: { product: Product }) {
       <Flex flexDir={["column", null, "row"]} gap="50px" mb="50px">
         <Flex flexDir="column" w={["100%", null, "50%"]}>
           <Image
-            objectFit="cover"
+            objectFit="contain"
+            w={["300px", "500px"]}
+            h={["300px", "500px"]}
             src={selectedImage.link ?? product.subImages[0].link}
             alt={selectedImage.name ?? product.subImages[0].name}
           />
