@@ -78,6 +78,7 @@ export default function CompanyDetailPage({ company }: { company: Company }) {
           text="CONTACT US"
           url={company.email}
           icon={<EmailIcon />}
+          isEmail={true}
         />
       </Flex>
       <Grid
@@ -140,10 +141,12 @@ const WebsiteBox = ({
   url,
   text,
   icon,
+  isEmail,
 }: {
   url: string;
   text: string;
   icon: React.ReactNode;
+  isEmail?: boolean;
 }) => {
   return (
     <ChakraLink
@@ -151,7 +154,7 @@ const WebsiteBox = ({
       _hover={{
         textDecor: "none",
       }}
-      href={url}
+      href={isEmail ? `mailto:${url}` : url}
       target="_blank"
     >
       <Flex
