@@ -3,6 +3,7 @@ export const TSTBIO = {
   english: "tst biomedical eletronics co. ltd",
   chinese: "嘉碩生醫電子股份有限公司",
   website: "https://www.tst.bio/home.jsp?lang=tw",
+  email: "123@example.com",
   products: [
     {
       productId: "tstbio-1",

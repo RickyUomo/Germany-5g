@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { PX, MAX_W } from "@/styles/constans";
 import Link from "next/link";
-import { LinkIcon } from "@chakra-ui/icons";
+import { LinkIcon, EmailIcon } from "@chakra-ui/icons";
 import ALL_COMPANIES from "@/data/companies";
 
 type subImage = {
@@ -32,6 +32,7 @@ export type Company = {
   english: string;
   chinese: string;
   website: string;
+  email: string;
   products: Product[];
 };
 
@@ -67,7 +68,18 @@ export default function CompanyDetailPage({ company }: { company: Company }) {
       />
       <CompanyName mb="5px" name={company.english} />
       <CompanyName mb="20px" name={company.chinese} />
-      <WebsiteBox url={company.website} />
+      <Flex flexDir={["column", "row"]} gap="10px">
+        <WebsiteBox
+          text="OFFICIAL WEBSITE"
+          url={company.website}
+          icon={<LinkIcon />}
+        />
+        <WebsiteBox
+          text="CONTACT US"
+          url={company.email}
+          icon={<EmailIcon />}
+        />
+      </Flex>
       <Grid
         templateColumns={[
           "repeat(1, 1fr)",
@@ -124,7 +136,15 @@ const CompanyName = ({ name, ...styles }: { name: string } & TextProps) => {
   );
 };
 
-const WebsiteBox = ({ url }: { url: string }) => {
+const WebsiteBox = ({
+  url,
+  text,
+  icon,
+}: {
+  url: string;
+  text: string;
+  icon: React.ReactNode;
+}) => {
   return (
     <ChakraLink
       as={Link}
@@ -145,9 +165,9 @@ const WebsiteBox = ({ url }: { url: string }) => {
         color="white"
       >
         <Text fontWeight={600} textAlign="center">
-          OFFICIAL WEBSITE
+          {text}
         </Text>
-        <LinkIcon />
+        {icon}
       </Flex>
     </ChakraLink>
   );
