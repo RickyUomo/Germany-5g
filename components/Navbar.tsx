@@ -29,7 +29,7 @@ export const Navbar = () => {
       alignItems="center"
       bg="#070b36"
       px={PX}
-      py={["6px", "8px", "10px"]}
+      py="10px"
       mx="auto"
     >
       <ChakraLink as={Link} href="/">

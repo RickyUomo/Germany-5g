@@ -21,9 +21,7 @@ export const MobileNavbar = () => {
 
   return (
     <Box display={["inline-block", null, "none"]}>
-      <Button colorScheme="teal" onClick={onOpen}>
-        <HamburgerIcon />
-      </Button>
+      <HamburgerIcon fontSize="30px" color="white" onClick={onOpen} />
       <Drawer
         isOpen={isOpen}
         placement="right"
