@@ -56,7 +56,7 @@ export const HomeSection = () => {
       bgImage={["web-m.jpg", null, "/web.jpg"]}
       bgSize="cover"
       bgPos="center top"
-      minH={["640px", "100vh"]}
+      minH={["700px", "100vh"]}
       id="home"
     >
       <Box px={PX} maxW={MAX_W} mx="auto">
