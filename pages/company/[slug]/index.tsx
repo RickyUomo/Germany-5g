@@ -12,6 +12,7 @@ import { PX, MAX_W } from "@/styles/constans";
 import Link from "next/link";
 import { LinkIcon, EmailIcon } from "@chakra-ui/icons";
 import ALL_COMPANIES from "@/data/companies";
+import { CloseIcon } from "@chakra-ui/icons";
 
 type subImage = {
   name: string;
@@ -125,6 +126,31 @@ export default function CompanyDetailPage({ company }: { company: Company }) {
           </ChakraLink>
         ))}
       </Grid>
+      <Flex justify="center">
+        <ChakraLink
+          as={Link}
+          textAlign="center"
+          _hover={{
+            textDecor: "none",
+          }}
+          color="white"
+          href="/"
+        >
+          <Flex
+            px="20px"
+            py="10px"
+            alignItems="center"
+            justify="center"
+            gap="10px"
+            bgGradient="linear(to-r, #1ebea5, #107bef)"
+            borderRadius="5px"
+            maxW="150px"
+          >
+            CLOSE
+            <CloseIcon boxSize={3} />
+          </Flex>
+        </ChakraLink>
+      </Flex>
     </Flex>
   );
 }
