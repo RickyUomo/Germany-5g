@@ -35,38 +35,9 @@ export default function Home() {
         mt="30px"
         mb={["40px", "60px", "80px"]}
       >
-        {VITART.map((data, index) => (
-          <ChakraLink
-            as={Link}
-            _hover={{
-              textDecor: "none",
-            }}
-            href={data.href}
-            rel="ar"
-            key={index}
-          >
-            <Flex
-              flexDir="column"
-              justify="center"
-              alignItems="center"
-              maxH="500px"
-            >
-              <Image
-                objectFit="contain"
-                w={["200px", "300px", "400px"]}
-                h={["200px", "300px", "400px"]}
-                mb="10px"
-                aspectRatio={4 / 9}
-                draggable={false}
-                src={data.image}
-                alt={data.name}
-              />
-              <Text fontSize={["20px", null, "24px"]} fontWeight={600}>
-                {data.name}
-              </Text>
-            </Flex>
-          </ChakraLink>
-        ))}
+        <ChakraLink as={Link} href="/quicklook/quick1.reality">
+          <Image src="/example/product1.png" alt="p1" />
+        </ChakraLink>
       </Grid>
     </Box>
   );
