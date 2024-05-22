@@ -47,7 +47,7 @@ export default function Home() {
           >
             <Image
               objectFit="contain"
-              w={["200px", "300px", "400px"]}
+              w={["100%", null, "400px"]}
               h={["200px", "300px", "400px"]}
               mb="10px"
               aspectRatio={4 / 9}
