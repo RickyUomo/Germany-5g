@@ -20,6 +20,7 @@ export const HomeBoxLink = ({
       _hover={{
         textDecor: "none",
       }}
+      target="_blank"
       href={url}
     >
       <Flex alignItems="center" justify="center" gap="10px">
