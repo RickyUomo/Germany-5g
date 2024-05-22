@@ -13,6 +13,16 @@ import VITART from "@/data/vitart";
 export default function Home() {
   return (
     <Box px={PX} py="60px" maxW={MAX_W} mx="auto">
+      <Text
+        bgGradient="linear(to-r, #20c1a0, #0d72fa)"
+        bgClip="text"
+        fontSize={["20px", "28px", "32px"]}
+        fontWeight="extrabold"
+        mb={["30px", null, "50px"]}
+        textAlign="center"
+      >
+        PHYGITAL
+      </Text>
       <Grid
         templateColumns={[
           "repeat(1, 1fr)",

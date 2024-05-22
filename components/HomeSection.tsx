@@ -74,33 +74,32 @@ export const HomeSection = () => {
           {BOX_DATA.map((data, index) => (
             <HomeBoxLink {...data} key={index} />
           ))}
-          {isIPhone && isSafari && (
-            <ChakraLink
-              as={Link}
-              _hover={{ cursor: "pointer" }}
-              w={["100%", null, "150px"]}
-              px="30px"
-              py="20px"
-              maxW="360px"
-              bg="white"
-              borderRadius="10px"
-              h="100%"
-              href="/vitart/"
-              rel="ar"
-            >
-              <Flex justify="center" alignItems="center" gap="5px">
-                <Text
-                  fontSize={["18px", null, "20px"]}
-                  bgGradient="linear(to-r, #1bb9aa, #3197d3)"
-                  bgClip="text"
-                  textAlign="center"
-                >
-                  Physical
-                </Text>
-                <ArrowForwardIcon color="#3298d2" boxSize={5} />
-              </Flex>
-            </ChakraLink>
-          )}
+          {/* {isIPhone && isSafari && ( */}
+          <ChakraLink
+            as={Link}
+            _hover={{ cursor: "pointer" }}
+            w={["100%", null, "150px"]}
+            px="30px"
+            py="20px"
+            maxW="360px"
+            bg="white"
+            borderRadius="10px"
+            h="100%"
+            href="/vitart/"
+          >
+            <Flex justify="center" alignItems="center" gap="5px">
+              <Text
+                fontSize={["18px", null, "20px"]}
+                bgGradient="linear(to-r, #1bb9aa, #3197d3)"
+                bgClip="text"
+                textAlign="center"
+              >
+                Phygital
+              </Text>
+              <ArrowForwardIcon color="#3298d2" boxSize={5} />
+            </Flex>
+          </ChakraLink>
+          {/* )} */}
         </Flex>
       </Box>
     </Box>
