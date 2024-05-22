@@ -45,26 +45,23 @@ export default function Home() {
             rel="ar"
             key={index}
           >
-            <Flex
-              flexDir="column"
-              justify="center"
-              alignItems="center"
-              maxH="500px"
+            <Image
+              objectFit="contain"
+              w={["200px", "300px", "400px"]}
+              h={["200px", "300px", "400px"]}
+              mb="10px"
+              aspectRatio={4 / 9}
+              draggable={false}
+              src={data.image}
+              alt={data.name}
+            />
+            <Text
+              textAlign="center"
+              fontSize={["20px", null, "24px"]}
+              fontWeight={600}
             >
-              <Image
-                objectFit="contain"
-                w={["200px", "300px", "400px"]}
-                h={["200px", "300px", "400px"]}
-                mb="10px"
-                aspectRatio={4 / 9}
-                draggable={false}
-                src={data.image}
-                alt={data.name}
-              />
-              <Text fontSize={["20px", null, "24px"]} fontWeight={600}>
-                {data.name}
-              </Text>
-            </Flex>
+              {data.name}
+            </Text>
           </ChakraLink>
         ))}
       </Grid>
