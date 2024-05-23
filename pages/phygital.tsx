@@ -1,12 +1,4 @@
-import {
-  Box,
-  Image,
-  Text,
-  Grid,
-  Link as ChakraLink,
-  Flex,
-} from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, Image, Text, Grid } from "@chakra-ui/react";
 import { PX, MAX_W } from "@/styles/constans";
 import VITART from "@/data/vitart";
 

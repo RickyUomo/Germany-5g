@@ -85,7 +85,7 @@ export const HomeSection = () => {
               bg="white"
               borderRadius="10px"
               h="100%"
-              href="/vitart/"
+              href="/phygital/"
             >
               <Flex justify="center" alignItems="center" gap="5px">
                 <Text
