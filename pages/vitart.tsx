@@ -45,7 +45,7 @@ export default function Home() {
             rel="ar"
             key={index}
           >
-            {/* <Image
+            <Image
               objectFit="contain"
               w={["100%", null, "400px"]}
               h={["200px", "300px", "400px"]}
@@ -54,7 +54,7 @@ export default function Home() {
               draggable={false}
               src="https://developer.apple.com/augmented-reality/quick-look/models/hab/hab_2x.png"
               alt={data.name}
-            /> */}
+            />
             <Text
               textAlign="center"
               fontSize={["20px", null, "24px"]}
