@@ -52,7 +52,7 @@ export default function Home() {
               mb="10px"
               aspectRatio={4 / 9}
               draggable={false}
-              src={data.image}
+              src="https://developer.apple.com/augmented-reality/quick-look/models/hab/hab_2x.png"
               alt={data.name}
             />
             <Text
