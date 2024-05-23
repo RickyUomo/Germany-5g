@@ -1,12 +1,4 @@
-import {
-  Box,
-  Image,
-  Text,
-  Grid,
-  Link as ChakraLink,
-  Flex,
-} from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, Image, Text, Grid } from "@chakra-ui/react";
 import { PX, MAX_W } from "@/styles/constans";
 import VITART from "@/data/vitart";
 
@@ -36,15 +28,7 @@ export default function Home() {
         mb={["40px", "60px", "80px"]}
       >
         {VITART.map((data, index) => (
-          <ChakraLink
-            as={Link}
-            _hover={{
-              textDecor: "none",
-            }}
-            href={data.href}
-            rel="ar"
-            key={index}
-          >
+          <a href={data.href} rel="ar" key={index}>
             <Image
               objectFit="contain"
               w={["100%", null, "400px"]}
@@ -62,7 +46,7 @@ export default function Home() {
             >
               {data.name}
             </Text>
-          </ChakraLink>
+          </a>
         ))}
       </Grid>
     </Box>
