@@ -84,7 +84,7 @@ export default function ProductDetailPage({ product }: { product: Product }) {
             textDecor: "none",
           }}
           color="white"
-          href={`/company/${slug}`}
+          href={`https://bizwinner.xrt.com.tw/company/${slug}`}
         >
           <Flex
             px="20px"
