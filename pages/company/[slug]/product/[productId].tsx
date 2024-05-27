@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { CloseIcon } from "@chakra-ui/icons";
-import { Text, Flex, Image, Box, Link } from "@chakra-ui/react";
+import { Text, Flex, Image, Box, Link as ChakraLink } from "@chakra-ui/react";
+import Link from "next/link";
 import { PX, MAX_W } from "@/styles/constans";
 import ALL_COMPANIES from "@/data/companies";
 import ReactPlayer from "react-player";
@@ -78,13 +79,14 @@ export default function ProductDetailPage({ product }: { product: Product }) {
       )}
 
       <Flex justify="center">
-        <Link
+        <ChakraLink
+          as={Link}
           textAlign="center"
           _hover={{
             textDecor: "none",
           }}
           color="white"
-          href={`https://bizwinner.xrt.com.tw/company/${slug}`}
+          href={`/company/${slug}`}
         >
           <Flex
             px="20px"
@@ -99,7 +101,7 @@ export default function ProductDetailPage({ product }: { product: Product }) {
             CLOSE
             <CloseIcon boxSize={3} />
           </Flex>
-        </Link>
+        </ChakraLink>
       </Flex>
     </Box>
   );
