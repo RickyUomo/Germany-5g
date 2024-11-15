@@ -4,6 +4,7 @@ const nextConfig = {
   distDir: "out",
   reactStrictMode: true,
   trailingSlash: true,
+  basePath: '/bizwinner',
 };
 
 export default nextConfig;
